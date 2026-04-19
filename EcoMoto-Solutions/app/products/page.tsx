@@ -3,7 +3,7 @@ import Link from 'next/link';
 const products = [
   {
     id: '1',
-    slug: 'products-city-feeder',
+    slug: 'city-feeder',
     name: 'City Feeder Series',
     description: 'Light-duty electric cargo tricycle for quick city deliveries.',
     image: '/images/city-feeder.jpg',
@@ -12,7 +12,7 @@ const products = [
   },
   {
     id: '2',
-    slug: 'products-urban-hauler',
+    slug: 'urban-hauler',
     name: 'Urban Hauler Series',
     description: 'Electric cargo tricycle for urban delivery.',
     image: '/images/urban-hauler.jpg',
@@ -21,7 +21,7 @@ const products = [
   },
   {
     id: '3',
-    slug: 'products-heavy-hauler',
+    slug: 'heavy-hauler',
     name: 'Heavy-Duty Hauler',
     description: 'Heavy-duty cargo tricycle.',
     image: '/images/heavy-hauler.jpg',
@@ -30,7 +30,7 @@ const products = [
   },
   {
     id: '4',
-    slug: 'products-commando-3000',
+    slug: 'commando-3000',
     name: 'Commando 3000',
     description: 'High-performance electric motorcycle.',
     image: '/images/commando-3000.jpg',
@@ -39,7 +39,7 @@ const products = [
   },
   {
     id: '5',
-    slug: 'products-passenger-cruiser',
+    slug: 'passenger-cruiser',
     name: 'Passenger Cruiser',
     description: 'Electric passenger shuttle.',
     image: '/images/passenger-cruiser.jpg',
@@ -48,7 +48,7 @@ const products = [
   },
   {
     id: '6',
-    slug: 'products-lfp-power',
+    slug: 'lfp-power',
     name: 'LFP Power Series',
     description: 'Lithium Iron Phosphate battery packs.',
     image: '/images/battery1.png',
