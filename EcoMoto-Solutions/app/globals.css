@@ -1,58 +1,19 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  /* Primary Colors */
   --primary: #0D9488;
   --primary-hover: #0F766E;
   --primary-light: #14b8a6;
-  
-  /* Background Colors */
   --background: #ffffff;
   --background-alt: #f8fafc;
-  
-  /* Text Colors */
   --text-primary: #0f172a;
   --text-secondary: #64748b;
-  
-  /* Accent */
   --accent: #f59e0b;
-  
-  /* Border */
-  --border: #e2e8f0;
-  
-  /* Dark Mode */
-  --dark-bg: #0f172a;
-}
-
-@theme inline {
-  --color-primary: var(--primary);
-  --color-primary-hover: var(--primary-hover);
-  --color-primary-light: var(--primary-light);
-  
-  --color-background: var(--background);
-  --color-background-alt: var(--background-alt);
-  
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
-  
-  --color-accent: var(--accent);
-  
-  --color-border: var(--border);
-  
-  --color-dark: var(--dark-bg);
-  
-  --font-sans: var(--font-inter);
 }
 
 body {
-  background: var(--background);
   color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
-}
-
-/* Custom Utilities */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  background: var(--background);
 }

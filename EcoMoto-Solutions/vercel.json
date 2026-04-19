@@ -8,5 +8,11 @@
   },
   "install": {
     "command": "npm install"
-  }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
 }
