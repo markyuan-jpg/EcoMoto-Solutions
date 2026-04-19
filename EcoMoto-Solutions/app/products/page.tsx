@@ -74,7 +74,7 @@ export default function ProductsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
-            <Link key={product.id} href={`/${product.slug}`}>
+            <Link key={product.id} href={`/products/${product.slug}`}>
               <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer">
                 <div className="aspect-[4/3] bg-slate-100">
                   <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
@@ -92,6 +92,7 @@ export default function ProductsPage() {
                       <p className="text-sm font-medium">{product.spec}</p>
                     </div>
                   </div>
+                  <div className="mt-4 text-teal-600 text-sm font-medium">View Details →</div>
                 </div>
               </div>
             </Link>
