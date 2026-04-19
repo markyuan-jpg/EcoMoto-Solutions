@@ -6,11 +6,17 @@ const products = {
     description: 'Light-duty electric cargo tricycle for quick city deliveries.',
     details: 'City Feeder Series light-duty electric cargo tricycle. 800W motor, 60-80km range. Compact design perfect for urban last-mile logistics.',
     image: '/images/city-feeder.jpg',
+    thumbnails: ['/images/city-feeder-thumb1.png', '/images/city-feeder-thumb2.png'],
     specs: [
+      { label: 'Overall Vehicle Dimensions', value: '1300 × 1000mm' },
       { label: 'Motor Power', value: '800W+ Motor' },
       { label: 'Battery', value: '72V 45Ah LiFePO4' },
       { label: 'Range', value: '60-80km' },
       { label: 'Load Capacity', value: '150kg' },
+      { label: 'Top Speed', value: '40km/h' },
+      { label: 'Tires', value: '300-12 / 300-12 Steel-belted' },
+      { label: 'Brakes', value: 'Front drum brake / Rear drum brake' },
+      { label: 'Charging Time', value: '5-6 hours' },
     ],
   },
   'urban-hauler': {
@@ -18,11 +24,17 @@ const products = {
     description: 'Electric cargo tricycle for urban delivery.',
     details: 'Urban Hauler Series. 1200W motor, 60-80km range. Medium payload capacity.',
     image: '/images/urban-hauler.jpg',
+    thumbnails: ['/images/urban-hauler-thumb1.png', '/images/urban-hauler-thumb2.png'],
     specs: [
-      { label: 'Motor Power', value: '1200W+ Motor' },
+      { label: 'Overall Vehicle Dimensions', value: '1600×1100mm' },
+      { label: 'Motor Power', value: '1200W+ Permanent Magnet Motor' },
       { label: 'Battery', value: '72V 60Ah LiFePO4' },
       { label: 'Range', value: '60-80km' },
       { label: 'Load Capacity', value: '>150kg' },
+      { label: 'Top Speed', value: '40-45km/h' },
+      { label: 'Tires', value: '375/400-12 Steel-belted' },
+      { label: 'Brakes', value: 'One-pedal triple brake' },
+      { label: 'Charging Time', value: '5-6 hours' },
     ],
   },
   'heavy-hauler': {
@@ -30,10 +42,17 @@ const products = {
     description: 'Heavy-duty cargo tricycle.',
     details: 'Heavy-Duty Hauler. 1800W motor, 80km+ range. Maximum payload capacity.',
     image: '/images/heavy-hauler.jpg',
+    thumbnails: ['/images/heavy-hauler-thumb1.png', '/images/heavy-hauler-thumb2.png'],
     specs: [
-      { label: 'Motor Power', value: '1800W+ Motor' },
+      { label: 'Overall Vehicle Dimensions', value: '1800×1300mm' },
+      { label: 'Motor Power', value: '1800W+ Permanent Magnet Motor' },
+      { label: 'Battery', value: 'High Capacity LiFePO4 (72V 60Ah)' },
       { label: 'Range', value: '80km+' },
-      { label: 'Load Capacity', value: '>500kg' },
+      { label: 'Load Capacity', value: '>500kg (Heavy-duty / Customizable)' },
+      { label: 'Top Speed', value: '40-45km/h' },
+      { label: 'Tires', value: '450/500-12 Steel-belted Heavy-duty' },
+      { label: 'Brakes', value: 'Front/Rear drum disc' },
+      { label: 'Charging Time', value: '5-6 hours' },
     ],
   },
   'commando-3000': {
@@ -41,10 +60,18 @@ const products = {
     description: 'High-performance electric motorcycle.',
     details: 'Commando 3000. 3000W motor, >80km range. High performance with swappable battery.',
     image: '/images/commando-3000.jpg',
+    thumbnails: ['/images/commando-3000-2.png', '/images/commando-3000-3.png'],
     specs: [
       { label: 'Motor Power', value: '3000W Hub Motor' },
+      { label: 'Battery', value: '72V LiFePO4 (Swappable option available)' },
       { label: 'Range', value: '>80km' },
       { label: 'Top Speed', value: '>80km/h' },
+      { label: 'Tires', value: 'FR 2.75-18/RR 3.5-17' },
+      { label: 'Brakes', value: 'Hydraulic Disc Brakes' },
+      { label: 'Charging Time', value: '4-5 hours' },
+      { label: 'Passenger Capacity', value: '2-3 persons (including driver)' },
+      { label: 'Max Load', value: '250kg' },
+      { label: 'Torque', value: '190N·m' },
     ],
   },
   'passenger-cruiser': {
@@ -52,21 +79,34 @@ const products = {
     description: 'Electric passenger shuttle.',
     details: 'Passenger Cruiser. 2000W motor, 120km+ range. Comfortable seating for 4-8 passengers.',
     image: '/images/passenger-cruiser.jpg',
+    thumbnails: [],
     specs: [
       { label: 'Motor Power', value: '2000W Motor' },
-      { label: 'Range', value: '120+km' },
-      { label: 'Passengers', value: '4-8' },
+      { label: 'Battery', value: '72V 120Ah LiFePO4' },
+      { label: 'Range', value: '120km' },
+      { label: 'Passenger Capacity', value: '4-8 passengers' },
+      { label: 'Top Speed', value: '55km/h' },
+      { label: 'Tires', value: '400-12 Steel-belted' },
+      { label: 'Brakes', value: 'Front/rear drum Brakes' },
+      { label: 'Charging Time', value: '6-7 hours' },
     ],
   },
   'lfp-power': {
     name: 'LFP Power Series',
     description: 'Lithium Iron Phosphate battery packs.',
-    details: 'LFP Power Series. 48-72V, 45-100Ah, 2000+ cycles. Smart BMS included.',
+    details: 'LFP Power Series. 48-72V, 45-100Ah, 3000+ cycles. Smart BMS included.',
     image: '/images/battery1.png',
+    thumbnails: ['/images/battery2.png', '/images/battery3.png'],
     specs: [
-      { label: 'Voltage', value: '48V / 60V / 72V' },
-      { label: 'Capacity', value: '45-100Ah' },
-      { label: 'Cycle Life', value: '2000+ cycles' },
+      { label: 'Cell Type', value: 'LiFePO4 (Lithium Iron Phosphate)' },
+      { label: 'Voltage Options', value: '48V / 60V / 72V' },
+      { label: 'Capacity Options', value: '45Ah / 60Ah / 80Ah / 100Ah' },
+      { label: 'Cycle Life', value: '3000+ cycles at 80% DOD' },
+      { label: 'BMS', value: 'Smart BMS with overcharge, over-discharge, over-current, short circuit, temperature protection' },
+      { label: 'Communication', value: 'RS485 / CAN (optional)' },
+      { label: 'Operating Temperature', value: 'Charge: 0~45℃ / Discharge: -20~60℃' },
+      { label: 'Certifications', value: 'CE, UN38.3, MSDS' },
+      { label: 'Warranty', value: '12 months (extended available)' },
     ],
   },
 };
@@ -106,9 +146,21 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <div className="aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden">
+            <div className="aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden mb-4">
               <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
             </div>
+            {p.thumbnails && p.thumbnails.length > 0 && (
+              <div className="grid grid-cols-4 gap-2">
+                <div className="aspect-square bg-slate-100 rounded-lg overflow-hidden">
+                  <img src={p.image} alt="Main view" className="w-full h-full object-cover" />
+                </div>
+                {p.thumbnails.map((thumb: string, idx: number) => (
+                  <div key={idx} className="aspect-square bg-slate-100 rounded-lg overflow-hidden">
+                    <img src={thumb} alt={`View ${idx + 1}`} className="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           <div>
@@ -116,7 +168,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <p className="mt-4 text-lg text-slate-600">{p.details}</p>
 
             <div className="mt-8">
-              <h2 className="text-xl font-semibold text-slate-900 mb-4">Specifications</h2>
+              <h2 className="text-xl font-semibold text-slate-900 mb-4">Technical Specifications</h2>
               <div className="space-y-3">
                 {p.specs.map((spec: any) => (
                   <div key={spec.label} className="flex justify-between py-2 border-b border-slate-100">
@@ -129,10 +181,10 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700">
-                Request Quote
+                Get Quote
               </Link>
               <a href="https://wa.me/8618820222555" className="px-6 py-3 text-teal-600 border border-teal-600 rounded-lg hover:bg-teal-50">
-                WhatsApp
+                Chat on WhatsApp
               </a>
             </div>
           </div>
