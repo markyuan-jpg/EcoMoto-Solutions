@@ -1,1 +1,12 @@
-{"buildCommand": "npm run build", "devCommand": "npm run dev", "installCommand": "npm install"}
+{
+  "build": {
+    "command": "npm run build",
+    "output": ".next"
+  },
+  "dev": {
+    "command": "npm run dev"
+  },
+  "install": {
+    "command": "npm install"
+  }
+}
