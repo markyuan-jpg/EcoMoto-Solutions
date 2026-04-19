@@ -1,9 +1,5 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
 import ProductCard from '@/components/ProductCard';
-import { useRouter } from 'next/router';
 
 const allProducts = [
   {
@@ -14,13 +10,11 @@ const allProducts = [
     fullDescription: 'City Feeder Series light-duty electric cargo tricycle. 800W motor, 60-80km range.',
     type: 'cargo',
     image: '/images/city-feeder.jpg',
-    thumbnails: ['/images/city-feeder-thumb1.png', '/images/city-feeder-thumb2.png'],
     specifications: [
       { label: 'Motor Power', value: '800W+ Motor' },
       { label: 'Battery', value: '72V 45Ah LiFePO4' },
       { label: 'Range', value: '60-80km' },
       { label: 'Load Capacity', value: '150kg' },
-      { label: 'Top Speed', value: '40km/h' },
     ],
     features: ['Compact design', 'Quick charging', 'Low costs'],
     applications: ['Food delivery', 'Package delivery'],
@@ -33,16 +27,11 @@ const allProducts = [
     fullDescription: 'Urban Hauler Series. 1200W motor, 60-80km range.',
     type: 'cargo',
     image: '/images/urban-hauler.jpg',
-    thumbnails: ['/images/urban-hauler-thumb1.png', '/images/urban-hauler-thumb2.png'],
     specifications: [
       { label: 'Motor Power', value: '1200W+ Motor' },
       { label: 'Battery', value: '72V 60Ah LiFePO4' },
       { label: 'Range', value: '60-80km' },
-      { label: 'Load Capacity', value: '>150kg' },
-      { label: 'Top Speed', value: '40-45km/h' },
     ],
-    features: ['Medium payload', 'Extended range', 'Durable'],
-    applications: ['Wholesale delivery', 'Retail restocking'],
   },
   {
     id: '3',
@@ -52,16 +41,10 @@ const allProducts = [
     fullDescription: 'Heavy-Duty Hauler. 1800W motor, 80km+ range.',
     type: 'cargo',
     image: '/images/heavy-hauler.jpg',
-    thumbnails: ['/images/heavy-hauler-thumb1.png', '/images/heavy-hauler-thumb2.png'],
     specifications: [
       { label: 'Motor Power', value: '1800W+ Motor' },
-      { label: 'Battery', value: '72V 60Ah LiFePO4' },
       { label: 'Range', value: '80km+' },
-      { label: 'Load Capacity', value: '>500kg' },
-      { label: 'Top Speed', value: '40-45km/h' },
     ],
-    features: ['Maximum payload', 'Long range', 'Heavy-duty'],
-    applications: ['Warehouse logistics', 'Bulk cargo'],
   },
   {
     id: '4',
@@ -71,16 +54,10 @@ const allProducts = [
     fullDescription: 'Commando 3000. 3000W motor, >80km range.',
     type: 'specialty',
     image: '/images/commando-3000.jpg',
-    thumbnails: ['/images/commando-3000-2.png', '/images/commando-3000-3.png'],
     specifications: [
       { label: 'Motor Power', value: '3000W Hub Motor' },
-      { label: 'Battery', value: '72V LiFePO4' },
       { label: 'Range', value: '>80km' },
-      { label: 'Top Speed', value: '>80km/h' },
-      { label: 'Torque', value: '190N.m' },
     ],
-    features: ['High performance', 'Swappable battery'],
-    applications: ['Delivery fleets', 'Urban commuting'],
   },
   {
     id: '5',
@@ -90,16 +67,10 @@ const allProducts = [
     fullDescription: 'Passenger Cruiser. 2000W motor, 120km+ range.',
     type: 'passenger',
     image: '/images/passenger-cruiser.jpg',
-    thumbnails: [],
     specifications: [
       { label: 'Motor Power', value: '2000W Motor' },
-      { label: 'Battery', value: '72V 120Ah LiFePO4' },
       { label: 'Range', value: '120+km' },
-      { label: 'Passenger Capacity', value: '4-8 passengers' },
-      { label: 'Top Speed', value: '55km/h' },
     ],
-    features: ['Comfortable seating', 'Climate control'],
-    applications: ['Corporate shuttle', 'Tourist transport'],
   },
   {
     id: '6',
@@ -109,25 +80,22 @@ const allProducts = [
     fullDescription: 'LFP Power Series. 48-72V, 45-100Ah, 2000+ cycles.',
     type: 'specialty',
     image: '/images/battery1.png',
-    thumbnails: ['/images/battery2.png', '/images/battery3.png'],
     specifications: [
-      { label: 'Cell Type', value: 'LiFePO4' },
-      { label: 'Voltage Options', value: '48V / 60V / 72V' },
-      { label: 'Capacity Options', value: '45Ah / 60Ah / 80Ah / 100Ah' },
-      { label: 'Cycle Life', value: '2000+ cycles at 80% DOD' },
-      { label: 'BMS', value: 'Smart BMS with protection' },
+      { label: 'Voltage', value: '48V / 60V / 72V' },
+      { label: 'Capacity', value: '45-100Ah' },
     ],
-    features: ['LFP technology', 'Smart BMS', 'Long cycle life'],
-    applications: ['EV fleet conversion', 'Backup power'],
   },
 ];
 
+export async function generateStaticParams() {
+  return allProducts.map((product) => ({
+    slug: product.slug,
+  }));
+}
+
 export default function ProductPage({ params }: { params: { slug: string } }) {
-  const router = useRouter();
-  const slug = params.slug;
-  
-  const product = allProducts.find((p) => p.slug === slug);
-  const relatedProducts = product 
+  const product = allProducts.find((p) => p.slug === params.slug);
+  const relatedProducts = product
     ? allProducts.filter((p) => p.id !== product.id && p.type === product.type)
     : [];
 
@@ -144,8 +112,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     );
   }
 
-  const [selectedImage, setSelectedImage] = useState(product.image);
-  const allImages = [product.image, ...(product.thumbnails || [])].filter(Boolean);
+  // For client component - no useState in server component
+  const selectedImage = product.image;
+  const allImages = [product.image, ...(product.thumbnails || [])];
 
   return (
     <div className="py-16">
@@ -166,15 +135,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             {product.thumbnails && product.thumbnails.length > 0 && (
               <div className="flex gap-3">
                 {allImages.map((img: string, index: number) => (
-                  <button
-                    key={index}
-                    onClick={() => setSelectedImage(img)}
-                    className={`w-20 h-20 rounded-lg overflow-hidden border-2 ${
-                      selectedImage === img ? 'border-teal-600' : 'border-transparent'
-                    }`}
-                  >
+                  <div key={index} className={`w-20 h-20 rounded-lg overflow-hidden border-2 ${selectedImage === img ? 'border-teal-600' : 'border-transparent'}`}>
                     <img src={img} alt={`${product.name} view ${index + 1}`} className="w-full h-full object-cover" />
-                  </button>
+                  </div>
                 ))}
               </div>
             )}
@@ -196,19 +159,21 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               </div>
             </div>
 
-            <div className="mt-8">
-              <h2 className="text-xl font-semibold text-slate-900 mb-4">Key Features</h2>
-              <ul className="space-y-2">
-                {product.features.map((feature: string) => (
-                  <li key={feature} className="flex items-center">
-                    <svg className="w-5 h-5 text-teal-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-slate-600">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {product.features && (
+              <div className="mt-8">
+                <h2 className="text-xl font-semibold text-slate-900 mb-4">Key Features</h2>
+                <ul className="space-y-2">
+                  {product.features.map((feature: string) => (
+                    <li key={feature} className="flex items-center">
+                      <svg className="w-5 h-5 text-teal-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-slate-600">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700">
@@ -224,7 +189,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className="mt-16">
           <h2 className="text-2xl font-bold text-slate-900 mb-6">Ideal Applications</h2>
           <div className="flex flex-wrap gap-3">
-            {product.applications.map((app: string) => (
+            {product.applications?.map((app: string) => (
               <span key={app} className="px-4 py-2 bg-slate-100 text-slate-700 rounded-full">
                 {app}
               </span>
