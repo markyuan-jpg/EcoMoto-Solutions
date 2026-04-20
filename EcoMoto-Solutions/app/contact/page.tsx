@@ -21,53 +21,17 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div>
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Send us a Message</h2>
-            <form className="space-y-6" action="https://formspree.io/f/your-form-id" method="POST">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-700">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
-                />
-              </div>
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-slate-700">Company</label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  className="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  className="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-lg transition-colors duration-200"
-              >
-                Send Message
-              </button>
-            </form>
+            <iframe 
+              data-tally-src="https://tally.so/embed/GxByvL?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+              loading="lazy" 
+              width="100%" 
+              height={550} 
+              frameBorder={0} 
+              marginHeight={0} 
+              marginWidth={0} 
+              title="Send us a Message"
+            />
+            <script async src="https://tally.so/widgets/embed.js" />
           </div>
 
           {/* Contact Info */}
