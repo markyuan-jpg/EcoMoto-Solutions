@@ -77,13 +77,13 @@ const products = {
   'passenger-cruiser': {
     name: 'Passenger Cruiser',
     description: 'Electric passenger shuttle.',
-    details: 'Passenger Cruiser. 2000W motor, 120km+ range. Comfortable seating for 4-8 passengers.',
+    details: 'Passenger Cruiser. 4000W motor, 120-150km range. Comfortable seating for 4-8 passengers.',
     image: '/images/passenger-cruiser.jpg',
     thumbnails: [],
     specs: [
-      { label: 'Motor Power', value: '2000W Motor' },
+      { label: 'Motor Power', value: '4000W Motor' },
       { label: 'Battery', value: '72V 120Ah LiFePO4' },
-      { label: 'Range', value: '120km' },
+      { label: 'Range', value: '120-150km' },
       { label: 'Passenger Capacity', value: '4-8 passengers' },
       { label: 'Top Speed', value: '55km/h' },
       { label: 'Tires', value: '400-12 Steel-belted' },
