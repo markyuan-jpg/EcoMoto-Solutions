@@ -81,7 +81,7 @@ export default function ContactPage() {
               <div>
                 <h3 className="font-semibold text-slate-900">WhatsApp</h3>
                 <a
-                  href="https://wa.me/8618820222555"
+                  href="https://api.whatsapp.com/send?phone=8618820222555"
                   className="text-teal-600 hover:text-teal-700 transition-colors"
                 >
                   +86 188 2027 2255
@@ -104,7 +104,7 @@ export default function ContactPage() {
             <div className="mt-12 bg-slate-100 rounded-xl p-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4">Quick Contact</h3>
               <a
-                href="https://wa.me/8618820222555"
+                href="https://api.whatsapp.com/send?phone=8618820222555"
                 className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-lg transition-colors duration-200"
               >
                 Contact via WhatsApp
