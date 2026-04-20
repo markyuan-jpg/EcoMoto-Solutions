@@ -79,7 +79,7 @@ export default function ContactPage() {
                 <p className="text-slate-600">sales@ecomotosolutions.com</p>
               </div>
               <div>
-                <h3 className="font-semibold text-slate-900">WhatsApp</h3>
+                <h3 className="font-semibold text-slate-900">WhatsApp Business</h3>
                 <a
                   href="https://api.whatsapp.com/send?phone=8618820222555"
                   className="text-teal-600 hover:text-teal-700 transition-colors"
