@@ -21,13 +21,7 @@ const applicationScenarios = [
     products: 'Commando 3000',
     image: '/images/passenger-transport.webp',
   },
-  {
-    title: 'Scenic Shuttle',
-    description: 'Tourist sites, campuses, community transit',
-    longDescription: 'Designed for tourist sites, campuses, and community transit. Spacious seating, smooth electric drive. The Passenger Cruiser features 2000W motor, 120km range, and CAN bus system for fleet management.',
-    products: 'Passenger Cruiser',
-    image: '/images/scenic-shuttle.webp',
-  },
+  
 ];
 
 export default function SolutionsPage() {
