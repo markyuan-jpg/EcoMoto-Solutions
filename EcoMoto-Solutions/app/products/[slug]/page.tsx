@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ProductSchema from '@/components/SEO/ProductSchema';
 import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema';
+import ThumbnailGallery from '@/components/ThumbnailGallery';
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const product = products[params.slug as keyof typeof products];
@@ -205,21 +206,11 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <div className="aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden mb-4">
-              <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
-            </div>
-            {p.thumbnails && p.thumbnails.length > 0 && (
-              <div className="grid grid-cols-4 gap-2">
-                <div className="aspect-square bg-slate-100 rounded-lg overflow-hidden">
-                  <img src={p.image} alt="Main view" className="w-full h-full object-cover" />
-                </div>
-                {p.thumbnails.map((thumb: string, idx: number) => (
-                  <div key={idx} className="aspect-square bg-slate-100 rounded-lg overflow-hidden">
-                    <img src={thumb} alt={`View ${idx + 1}`} className="w-full h-full object-cover" />
-                  </div>
-                ))}
-              </div>
-            )}
+            <ThumbnailGallery 
+              mainImage={p.image} 
+              thumbnails={p.thumbnails || []} 
+              productName={p.name}
+            />
           </div>
 
           <div>

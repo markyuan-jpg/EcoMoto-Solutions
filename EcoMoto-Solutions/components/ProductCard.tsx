@@ -15,7 +15,7 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const href = `/${product.slug}`;
+  const href = `/products/${product.slug}`;
   const hasRange = product.specifications?.find((s: any) => s.label === 'Range');
   
   const getSpec = () => {
