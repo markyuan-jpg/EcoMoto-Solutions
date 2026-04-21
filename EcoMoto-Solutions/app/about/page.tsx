@@ -91,13 +91,13 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="aspect-video bg-slate-100 rounded-xl overflow-hidden">
-              <img src="/images/bafang-1.jpg" alt="Factory" className="w-full h-full object-cover" />
+              <img src="/images/bafang-1.webp" alt="Factory" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-video bg-slate-100 rounded-xl overflow-hidden">
-              <img src="/images/bafang-2.jpg" alt="Production" className="w-full h-full object-cover" />
+              <img src="/images/bafang-2.webp" alt="Production" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-video bg-slate-100 rounded-xl overflow-hidden">
-              <img src="/images/bafang-3.jpg" alt="Quality" className="w-full h-full object-cover" />
+              <img src="/images/bafang-3.webp" alt="Quality" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
