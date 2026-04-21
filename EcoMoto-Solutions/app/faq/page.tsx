@@ -1,9 +1,10 @@
 import FAQItem from '@/components/FAQItem';
 import Breadcrumb from '@/components/Breadcrumb';
+import FAQSchema from '@/components/SEO/FAQSchema';
 
 export const metadata = {
-  title: 'FAQ - EcoMoto Solutions',
-  description: 'Frequently asked questions about sourcing electric vehicles, MOQ, lead time, and warranty.',
+  title: 'FAQ - Electric Cargo Tricycles & Motorcycles | EcoMoto Solutions',
+  description: 'Frequently asked questions about sourcing electric vehicles from EcoMoto Solutions. Learn about MOQ, lead time, certifications, and warranty.',
 };
 
 const faqs = [
@@ -47,46 +48,49 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <div className="py-16">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Breadcrumb items={[{ label: 'FAQ' }]} />
+    <>
+      <div className="py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'FAQ' }]} />
 
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900">Frequently Asked Questions</h1>
-          <p className="mt-4 text-lg text-slate-600">
-            Everything you need to know about sourcing from EcoMoto.
-          </p>
-        </div>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900">Frequently Asked Questions</h1>
+            <p className="mt-4 text-lg text-slate-600">
+              Everything you need to know about sourcing from EcoMoto.
+            </p>
+          </div>
 
-        {/* FAQ List */}
-        <div className="space-y-0 divide-y divide-slate-200">
-          {faqs.map((faq) => (
-            <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
-          ))}
-        </div>
+          {/* FAQ List */}
+          <div className="space-y-0 divide-y divide-slate-200">
+            {faqs.map((faq) => (
+              <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
+            ))}
+          </div>
 
-        {/* Contact CTA */}
-        <div className="mt-16 text-center">
-          <p className="text-lg text-slate-600">
-            Still have questions? We are here to help.
-          </p>
-          <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-lg transition-colors duration-200"
-            >
-              Contact Us
-            </a>
-            <a
-              href="https://wa.me/8618820222555"
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-teal-600 border border-teal-600 hover:bg-teal-50 rounded-lg transition-colors duration-200"
-            >
-              WhatsApp: +86 188 2027 2255
-            </a>
+          {/* Contact CTA */}
+          <div className="mt-16 text-center">
+            <p className="text-lg text-slate-600">
+              Still have questions? We are here to help.
+            </p>
+            <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-700 rounded-lg transition-colors duration-200"
+              >
+                Contact Us
+              </a>
+              <a
+                href="https://wa.me/8618820222555"
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-teal-600 border border-teal-600 hover:bg-teal-50 rounded-lg transition-colors duration-200"
+              >
+                WhatsApp: +86 188 2027 2255
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <FAQSchema />
+    </>
   );
 }

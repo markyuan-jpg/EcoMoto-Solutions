@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Electric Cargo Tricycles & Motorcycles for Commercial Fleets',
+  description: 'Explore our range of electric cargo tricycles, passenger motorcycles, and LFP battery packs. Built for logistics, delivery, and passenger transport.',
+};
 
 const products = [
   {
@@ -6,7 +12,7 @@ const products = [
     slug: 'city-feeder',
     name: 'City Feeder Series',
     description: 'Light-duty electric cargo tricycle for quick city deliveries.',
-    image: '/images/city-feeder.jpg',
+    image: '/images/city-feeder.webp',
     range: '60-80km',
     spec: '150kg',
   },
@@ -15,7 +21,7 @@ const products = [
     slug: 'urban-hauler',
     name: 'Urban Hauler Series',
     description: 'Electric cargo tricycle for urban delivery.',
-    image: '/images/urban-hauler.jpg',
+    image: '/images/urban-hauler.webp',
     range: '60-80km',
     spec: '>150kg',
   },
@@ -24,7 +30,7 @@ const products = [
     slug: 'heavy-hauler',
     name: 'Heavy-Duty Hauler',
     description: 'Heavy-duty cargo tricycle.',
-    image: '/images/heavy-hauler.jpg',
+    image: '/images/heavy-hauler.webp',
     range: '80km+',
     spec: '>500kg',
   },
@@ -33,7 +39,7 @@ const products = [
     slug: 'commando-3000',
     name: 'Commando 3000',
     description: 'High-performance electric motorcycle.',
-    image: '/images/commando-3000.jpg',
+    image: '/images/commando-3000.webp',
     range: '>80km',
     spec: '>80km/h',
   },
@@ -42,7 +48,7 @@ const products = [
     slug: 'passenger-cruiser',
     name: 'Passenger Cruiser',
     description: 'Electric passenger shuttle.',
-    image: '/images/passenger-cruiser.jpg',
+    image: '/images/passenger-cruiser.webp',
     range: '120+km',
     spec: '4-8 passengers',
   },
@@ -51,7 +57,7 @@ const products = [
     slug: 'lfp-power',
     name: 'LFP Power Series',
     description: 'Lithium Iron Phosphate battery packs.',
-    image: '/images/battery1.png',
+    image: '/images/battery1.webp',
     range: '2000+ cycles',
     spec: '45-100Ah',
   },

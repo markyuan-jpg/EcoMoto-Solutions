@@ -2,8 +2,8 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata = {
-  title: 'About Us - EcoMoto Solutions',
-  description: 'Learn about EcoMoto Solutions - your trusted B2B partner for electric vehicles.',
+  title: 'About EcoMoto Solutions - B2B Electric Vehicle Sourcing Partner',
+  description: 'EcoMoto Solutions is a professional sourcing partner for electric commercial vehicles. ISO-certified factories, CE/EEC/UL certified.',
 };
 
 const whyUs = [

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact - EcoMoto Solutions',
-  description: 'Contact EcoMoto Solutions for inquiries about electric commercial vehicles. Get in touch via form, email, or WhatsApp.',
+  title: 'Contact EcoMoto Solutions - Get a Quote for Electric Vehicles',
+  description: 'Contact EcoMoto Solutions for B2B quotes on electric cargo tricycles, commercial motorcycles, and LFP battery packs. Fast response within 24 hours.',
 };
 
 export default function ContactPage() {

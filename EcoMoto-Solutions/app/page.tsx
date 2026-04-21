@@ -5,10 +5,9 @@ import ProductCard from '@/components/ProductCard';
 import { useState, useEffect } from 'react';
 
 const heroImages = [
-  '/images/hero-carousel-1-crop.jpg',
-  '/images/hero-carousel-2-crop.jpg',
-  '/images/hero-carousel-3-crop.jpg',
-  '/images/hero-carousel-4-crop.jpg',
+  '/images/hero-carousel-2-crop.webp',
+  '/images/hero-carousel-3-crop.webp',
+  '/images/hero-carousel-4-crop.webp',
 ];
 
 const featuredProducts = [

@@ -2,8 +2,8 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata = {
-  title: 'Solutions - EcoMoto Solutions',
-  description: 'Industry-specific electric vehicle solutions for logistics, delivery, passenger transport, and more.',
+  title: 'Electric Vehicle Solutions for Logistics, Passenger Transport & Shuttles',
+  description: 'Tailored electric mobility solutions for urban logistics, passenger transport, and tourist shuttles. Contact us to discuss your fleet needs.',
 };
 
 const applicationScenarios = [

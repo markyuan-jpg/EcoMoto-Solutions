@@ -1,0 +1,15 @@
+# Robots.txt for EcoMoto Solutions
+# https://www.ecomotosolutions.com
+
+User-agent: *
+Allow: /
+
+# Disallow private/admin directories
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Sitemap
+Sitemap: https://www.ecomotosolutions.com/sitemap.xml

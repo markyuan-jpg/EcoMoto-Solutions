@@ -1,12 +1,71 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import ProductSchema from '@/components/SEO/ProductSchema';
+import BreadcrumbSchema from '@/components/SEO/BreadcrumbSchema';
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const product = products[params.slug as keyof typeof products];
+  
+  if (!product) {
+    return {
+      title: 'Product Not Found',
+    };
+  }
+
+  const productMeta: Record<string, { title: string; description: string }> = {
+    'city-feeder': {
+      title: 'City Feeder Series - Light-Duty Electric Cargo Tricycle',
+      description: 'City Feeder light-duty electric tricycle with 800W motor, 60-80km range, 150kg load. Ideal for fast urban delivery and small business transport.',
+    },
+    'urban-hauler': {
+      title: 'Urban Hauler Series - 1200W Electric Cargo Tricycle for Logistics',
+      description: 'Urban Hauler electric cargo tricycle with 1200W motor, 60-80km range, 150kg+ load capacity. Perfect for last-mile delivery and warehouse operations.',
+    },
+    'heavy-hauler': {
+      title: 'Heavy-Duty Hauler - 1800W+ Electric Cargo Tricycle for Heavy Loads',
+      description: 'Heavy-duty electric cargo tricycle with 1800W+ motor, 80km+ range, 500kg+ load capacity. Built for industrial logistics and construction sites.',
+    },
+    'commando-3000': {
+      title: 'Commando 3000 - 3000W Electric Motorcycle for Passenger Transport',
+      description: 'Commando 3000 electric motorcycle with 3000W motor, 190N·m torque, 80km+ range. Carries 2-3 passengers. Designed for passenger transport.',
+    },
+    'passenger-cruiser': {
+      title: 'Passenger Cruiser - 4000W Electric Shuttle for Tourist Sites & Campuses',
+      description: 'Passenger Cruiser electric shuttle with 4000W motor, 120-150km range, 4-8 passenger capacity. Ideal for scenic spots, universities, and community transit.',
+    },
+    'lfp-power': {
+      title: 'LFP Power Series - 48-72V LiFePO4 Battery Packs for EVs',
+      description: 'LFP Power Series lithium iron phosphate battery packs with smart BMS. 48-72V, 45-100Ah, 3000+ cycles. Customizable for EV fleets.',
+    },
+  };
+
+  const meta = productMeta[params.slug] || { title: product.name, description: product.description };
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      images: [
+        {
+          url: product.image,
+          width: 1200,
+          height: 630,
+          alt: product.name,
+        },
+      ],
+    },
+  };
+}
 
 const products = {
   'city-feeder': {
     name: 'City Feeder Series',
     description: 'Light-duty electric cargo tricycle for quick city deliveries.',
     details: 'City Feeder Series light-duty electric cargo tricycle. 800W motor, 60-80km range. Compact design perfect for urban last-mile logistics.',
-    image: '/images/city-feeder.jpg',
-    thumbnails: ['/images/city-feeder-thumb1.png', '/images/city-feeder-thumb2.png'],
+    image: '/images/city-feeder.webp',
+    thumbnails: ['/images/city-feeder-thumb1.webp', '/images/city-feeder-thumb2.webp'],
     specs: [
       { label: 'Overall Vehicle Dimensions', value: '1300 × 1000mm' },
       { label: 'Motor Power', value: '800W+ Motor' },
@@ -23,8 +82,8 @@ const products = {
     name: 'Urban Hauler Series',
     description: 'Electric cargo tricycle for urban delivery.',
     details: 'Urban Hauler Series. 1200W motor, 60-80km range. Medium payload capacity.',
-    image: '/images/urban-hauler.jpg',
-    thumbnails: ['/images/urban-hauler-thumb1.png', '/images/urban-hauler-thumb2.png'],
+    image: '/images/urban-hauler.webp',
+    thumbnails: ['/images/urban-hauler-thumb1.webp', '/images/urban-hauler-thumb2.webp'],
     specs: [
       { label: 'Overall Vehicle Dimensions', value: '1600×1100mm' },
       { label: 'Motor Power', value: '1200W+ Permanent Magnet Motor' },
@@ -41,8 +100,8 @@ const products = {
     name: 'Heavy-Duty Hauler',
     description: 'Heavy-duty cargo tricycle.',
     details: 'Heavy-Duty Hauler. 1800W motor, 80km+ range. Maximum payload capacity.',
-    image: '/images/heavy-hauler.jpg',
-    thumbnails: ['/images/heavy-hauler-thumb1.png', '/images/heavy-hauler-thumb2.png'],
+    image: '/images/heavy-hauler.webp',
+    thumbnails: ['/images/heavy-hauler-thumb1.webp', '/images/heavy-hauler-thumb2.webp'],
     specs: [
       { label: 'Overall Vehicle Dimensions', value: '1800×1300mm' },
       { label: 'Motor Power', value: '1800W+ Permanent Magnet Motor' },
@@ -59,8 +118,8 @@ const products = {
     name: 'Commando 3000',
     description: 'High-performance electric motorcycle.',
     details: 'Commando 3000. 3000W motor, >80km range. High performance with swappable battery.',
-    image: '/images/commando-3000.jpg',
-    thumbnails: ['/images/commando-3000-2.png', '/images/commando-3000-3.png'],
+    image: '/images/commando-3000.webp',
+    thumbnails: ['/images/commando-thumb1.webp', '/images/commando-thumb2.webp'],
     specs: [
       { label: 'Motor Power', value: '3000W Hub Motor' },
       { label: 'Battery', value: '72V LiFePO4 (Swappable option available)' },
@@ -78,7 +137,7 @@ const products = {
     name: 'Passenger Cruiser',
     description: 'Electric passenger shuttle.',
     details: 'Passenger Cruiser. 4000W motor, 120-150km range. Comfortable seating for 4-8 passengers.',
-    image: '/images/passenger-cruiser.jpg',
+    image: '/images/passenger-cruiser.webp',
     thumbnails: [],
     specs: [
       { label: 'Motor Power', value: '4000W Motor' },
@@ -95,8 +154,8 @@ const products = {
     name: 'LFP Power Series',
     description: 'Lithium Iron Phosphate battery packs.',
     details: 'LFP Power Series. 48-72V, 45-100Ah, 3000+ cycles. Smart BMS included.',
-    image: '/images/battery1.png',
-    thumbnails: ['/images/battery2.png', '/images/battery3.png'],
+    image: '/images/battery1.webp',
+    thumbnails: ['/images/battery2.webp', '/images/battery3.webp'],
     specs: [
       { label: 'Cell Type', value: 'LiFePO4 (Lithium Iron Phosphate)' },
       { label: 'Voltage Options', value: '48V / 60V / 72V' },
@@ -190,6 +249,21 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
+      
+      {/* SEO Schema */}
+      <ProductSchema
+        name={p.name}
+        description={p.description}
+        slug={params.slug}
+        image={p.image}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Products', url: '/products' },
+          { name: p.name, url: `/products/${params.slug}` },
+        ]}
+      />
     </div>
   );
 }

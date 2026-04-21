@@ -23,8 +23,8 @@ export const products: Product[] = [
     shortDescription: 'Light-duty electric cargo tricycle for quick city deliveries.',
     fullDescription: 'City Feeder Series light-duty electric cargo tricycle for quick city deliveries. Compact design perfect for urban last-mile logistics.',
     type: 'cargo',
-    image: '/images/city-feeder.jpg',
-    thumbnails: ['/images/city-feeder-thumb1.png', '/images/city-feeder-thumb2.png'],
+    image: '/images/city-feeder.webp',
+    thumbnails: ['/images/city-feeder-thumb1.webp', '/images/city-feeder-thumb2.webp'],
     specifications: [
       { label: 'Overall Vehicle Dimensions', value: '1300 x 1000mm' },
       { label: 'Motor Power', value: '800W+ Motor' },
@@ -51,8 +51,8 @@ export const products: Product[] = [
     shortDescription: 'Electric cargo tricycle for urban last-mile delivery.',
     fullDescription: 'Urban Hauler Series electric cargo tricycle for urban last-mile delivery. Medium-duty capacity for commercial operations.',
     type: 'cargo',
-    image: '/images/urban-hauler.jpg',
-    thumbnails: ['/images/urban-hauler-thumb1.png', '/images/urban-hauler-thumb2.png'],
+    image: '/images/urban-hauler.webp',
+    thumbnails: ['/images/urban-hauler-thumb1.webp', '/images/urban-hauler-thumb2.webp'],
     specifications: [
       { label: 'Overall Vehicle Dimensions', value: '1600 x 1100mm' },
       { label: 'Motor Power', value: '1200W+ Permanent Magnet Motor' },
@@ -79,8 +79,8 @@ export const products: Product[] = [
     shortDescription: 'Heavy-duty cargo tricycle for maximum load capacity.',
     fullDescription: 'Heavy-Duty Hauler electric cargo tricycle for maximum load capacity, reinforced frame for industrial use.',
     type: 'cargo',
-    image: '/images/heavy-hauler.jpg',
-    thumbnails: ['/images/heavy-hauler-thumb1.png', '/images/heavy-hauler-thumb2.png'],
+    image: '/images/heavy-hauler.webp',
+    thumbnails: ['/images/heavy-hauler-thumb1.webp', '/images/heavy-hauler-thumb2.webp'],
     specifications: [
       { label: 'Overall Vehicle Dimensions', value: '1800 x 1300mm' },
       { label: 'Motor Power', value: '1800W+ Permanent Magnet Motor' },
@@ -107,8 +107,8 @@ export const products: Product[] = [
     shortDescription: 'High-performance electric motorcycle for delivery fleets.',
     fullDescription: 'Commando 3000 high-performance electric motorcycle for delivery fleets and urban commuters. Powerful 3000W motor.',
     type: 'specialty',
-    image: '/images/commando-3000.jpg',
-    thumbnails: ['/images/commando-3000-2.png', '/images/commando-3000-3.png'],
+    image: '/images/commando-3000.webp',
+    thumbnails: ['/images/commando-thumb1.webp', '/images/commando-thumb2.webp'],
     specifications: [
       { label: 'Motor Power', value: '3000W Hub Motor' },
       { label: 'Battery', value: '72V LiFePO4 (Swappable option available)' },
@@ -136,7 +136,7 @@ export const products: Product[] = [
     shortDescription: 'Electric passenger shuttle for tourist sites and campuses.',
     fullDescription: 'Passenger Cruiser electric passenger shuttle for tourist sites operations, campuses, and community transit. 2000W motor, 120km+ range.',
     type: 'passenger',
-    image: '/images/passenger-cruiser.jpg',
+    image: '/images/passenger-cruiser.webp',
     thumbnails: [],
     specifications: [
       { label: 'Motor Power', value: '2000W Motor' },
@@ -163,8 +163,8 @@ export const products: Product[] = [
     shortDescription: 'Lithium Iron Phosphate battery packs for EV fleets.',
     fullDescription: 'LFP Power Series lithium iron phosphate battery packs. 48-72V, 45-100Ah, smart BMS, 2000+ cycles. Customizable capacity for EV fleets.',
     type: 'specialty',
-    image: '/images/battery1.png',
-    thumbnails: ['/images/battery2.png', '/images/battery3.png'],
+    image: '/images/battery1.webp',
+    thumbnails: ['/images/battery2.webp', '/images/battery3.webp'],
     specifications: [
       { label: 'Cell Type', value: 'LiFePO4 (Lithium Iron Phosphate)' },
       { label: 'Voltage Options', value: '48V / 60V / 72V' },
