@@ -17,7 +17,7 @@ const featuredProducts = [
     name: 'City Feeder Series',
     shortDescription: 'Light-duty electric cargo tricycle for quick city deliveries.',
     type: 'cargo',
-    image: '/images/city-feeder.jpg',
+    image: '/images/city-feeder.webp',
     specifications: [
       { label: 'Range', value: '60-80km' },
       { label: 'Load', value: '150kg' },
@@ -29,7 +29,7 @@ const featuredProducts = [
     name: 'Commando 3000',
     shortDescription: 'High-performance electric motorcycle.',
     type: 'specialty',
-    image: '/images/commando-3000.jpg',
+    image: '/images/commando-3000.webp',
     specifications: [
       { label: 'Range', value: '>80km' },
       { label: 'Top Speed', value: '>80km/h' },
@@ -41,7 +41,7 @@ const featuredProducts = [
     name: 'Passenger Cruiser',
     shortDescription: 'Electric passenger shuttle.',
     type: 'passenger',
-    image: '/images/passenger-cruiser.jpg',
+    image: '/images/passenger-cruiser.webp',
     specifications: [
       { label: 'Range', value: '120+km' },
       { label: 'Passengers', value: '4-8 passengers' },
