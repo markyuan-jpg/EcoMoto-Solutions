@@ -50,10 +50,52 @@ const featuredProducts = [
 ];
 
 const benefits = [
-  { title: 'Lower Operating Costs', description: 'Reduce fuel and maintenance costs.' },
-  { title: 'Zero Emissions', description: 'Meet sustainability goals.' },
-  { title: 'High Reliability', description: 'Less downtime and reduced maintenance.' },
-  { title: 'Silent Operation', description: 'Perfect for night deliveries.' },
+  { 
+    title: 'Lower Operating Costs', 
+    description: 'Reduce fuel and maintenance costs by up to 70% compared to traditional vehicles.',
+    stat: '70%', statLabel: 'Cost Savings',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    )
+  },
+  { 
+    title: 'Zero Emissions', 
+    description: 'Meet sustainability goals with 100% electric vehicles producing zero direct emissions.',
+    stat: '0', statLabel: 'Emissions',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.295M3.055 11h15a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.295M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    )
+  },
+  { 
+    title: 'High Reliability', 
+    description: 'Less downtime with proven quality and comprehensive warranty coverage.',
+    stat: '99%', statLabel: 'Uptime',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.959 11.959 0 0112 2c5.523 0 10 4.477 10 10s-4.477 10-10 10 10-4.477 10-10.382A11.959 11.959 0 013.382 12" />
+      </svg>
+    )
+  },
+  { 
+    title: 'Silent Operation', 
+    description: 'Perfect for night deliveries without disturbing residents.',
+    stat: '60dB', statLabel: 'Quiet',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+      </svg>
+    )
+  },
+];
+
+const scenarios = [
+  { title: 'Urban Logistics', description: 'Last-mile delivery for cities', image: '/images/urban-logistics.webp', stat: '60-80km', statLabel: 'Range' },
+  { title: 'Passenger Transport', description: 'Safe transport for 2-8 passengers', image: '/images/passenger-transport.webp', stat: '4-8', statLabel: 'Seats' },
+  { title: 'Scenic Shuttle', description: 'Tourist sites, campuses & communities', image: '/images/scenic-shuttle.webp', stat: '120+km', statLabel: 'Range' },
 ];
 
 const faqs = [
@@ -121,11 +163,19 @@ export default function Home() {
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900">Why Choose EcoMoto</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Why Choose EcoMoto</h2>
+            <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Trusted by businesses worldwide for reliable, sustainable electric vehicle solutions.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit) => (
-              <div key={benefit.title} className="bg-white p-6 rounded-xl shadow-sm border">
+              <div key={benefit.title} className="bg-white p-6 rounded-2xl shadow-sm border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                <div className="w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600 mb-4">
+                  {benefit.icon}
+                </div>
+                <div className="mb-3">
+                  <span className="text-3xl font-bold text-teal-600">{benefit.stat}</span>
+                  <span className="text-sm text-slate-500 ml-1">{benefit.statLabel}</span>
+                </div>
                 <h3 className="text-lg font-semibold text-slate-900">{benefit.title}</h3>
                 <p className="mt-2 text-slate-600 text-sm">{benefit.description}</p>
               </div>
@@ -137,21 +187,26 @@ export default function Home() {
       <section className="py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900">Application Scenarios</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Application Scenarios</h2>
+            <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Versatile solutions designed for every business need.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Link href="/solutions" className="bg-white p-6 rounded-xl shadow-sm border text-center hover:border-teal-500">
-              <h3 className="text-lg font-semibold text-slate-900">Urban Logistics</h3>
-              <p className="mt-2 text-slate-600">Last-mile delivery</p>
-            </Link>
-            <Link href="/solutions" className="bg-white p-6 rounded-xl shadow-sm border text-center hover:border-teal-500">
-              <h3 className="text-lg font-semibold text-slate-900">Passenger Transport</h3>
-              <p className="mt-2 text-slate-600">Carry 2-3 passengers</p>
-            </Link>
-            <Link href="/solutions" className="bg-white p-6 rounded-xl shadow-sm border text-center hover:border-teal-500">
-              <h3 className="text-lg font-semibold text-slate-900">Scenic Shuttle</h3>
-              <p className="mt-2 text-slate-600">Tourist sites, campuses</p>
-            </Link>
+            {scenarios.map((scenario) => (
+              <Link key={scenario.title} href="/solutions" className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+                <div className="aspect-[4/3] relative">
+                  <img src={scenario.image} alt={scenario.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="flex items-baseline gap-2 mb-1">
+                      <span className="text-2xl font-bold text-white">{scenario.stat}</span>
+                      <span className="text-sm text-white/80">{scenario.statLabel}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-white">{scenario.title}</h3>
+                    <p className="text-sm text-white/70">{scenario.description}</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
