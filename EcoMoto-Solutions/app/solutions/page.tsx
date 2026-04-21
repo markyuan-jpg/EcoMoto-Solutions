@@ -14,14 +14,20 @@ const applicationScenarios = [
     products: 'Urban Hauler, City Feeder',
     image: '/images/urban-logistics.webp',
   },
-  {
+{
     title: 'Passenger Transport',
     description: 'Carry 2-3 passengers daily',
     longDescription: 'Perfect for passenger transport, courier services, and rider fleets. The Commando 3000 electric motorcycle offers 3000W+ power, 190N.m torque, and high capacity battery options for 24/7 operation.',
     products: 'Commando 3000',
     image: '/images/passenger-transport.webp',
   },
-  
+  {
+    title: 'Scenic Shuttle',
+    description: 'Tourist sites, campuses, community transit',
+    longDescription: 'Designed for tourist sites, campuses, and community transit. Spacious seating, smooth electric drive. The Passenger Cruiser features 2000W motor, 120km range, and CAN bus system for fleet management.',
+    products: 'Passenger Cruiser',
+    image: '/images/scenic-shuttle.webp',
+  },
 ];
 
 export default function SolutionsPage() {
