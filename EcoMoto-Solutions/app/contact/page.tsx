@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Contact EcoMoto Solutions - Get a Quote for Electric Vehicles',
@@ -31,7 +32,7 @@ export default function ContactPage() {
               marginWidth={0} 
               title="Send us a Message"
             />
-            <script async src="https://tally.so/widgets/embed.js" />
+            <Script async src="https://tally.so/widgets/embed.js" />
           </div>
 
           {/* Contact Info */}
