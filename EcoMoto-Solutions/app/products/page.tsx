@@ -49,7 +49,7 @@ const products = [
     name: 'Passenger Cruiser',
     description: 'Electric passenger shuttle.',
     image: '/images/passenger-cruiser.webp',
-    range: '120+km',
+    range: '120-150km',
     spec: '4-8 passengers',
   },
   {
@@ -58,7 +58,7 @@ const products = [
     name: 'LFP Power Series',
     description: 'Lithium Iron Phosphate battery packs.',
     image: '/images/battery1.webp',
-    range: '2000+ cycles',
+    range: '3000+ cycles',
     spec: '45-100Ah',
   },
 ];
